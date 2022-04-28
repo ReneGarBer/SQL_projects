@@ -70,11 +70,12 @@ El diccionario de datos deberá modificarse conforme se altere el diagrama entid
 | Activo | Booleano |	No nulo |	Verdadero si el proveedor sigue activo, de lo contrario es falso |
 
 **Producto (Información de los productos que se venden en la tienda)**
-| Nombre	Tipo	Restricción	Descripción
-| Id	Entero	No nulo, serial	Entero que identifica a cada fila de la tabla
-| Tipo	Cadena	No nulo	Tipo de producto, ejemplos: tina, lavamanos, cortinas.
-| Nombre	Cadena	No nulo	Nombre del producto
-| Precio	Decimal	No nulo	Precio de compra del producto
-| Descripcion	Cadena		Descripcion del producto
-| Existencia	Entero		Cantidad de producto disponible para venta
-| Reusable	Booleano	No nulo	Verdadero si el producto es reusable, falso de lo contrario
+| Nombre | Tipo | Restricción	| Descripción |
+| ------ | ---- | ----------- | ----------- |
+| Id |Entero | No nulo, serial |	Entero que identifica a cada fila de la tabla |
+| Tipo | Cadena	| No nulo	| Tipo de producto, ejemplos: tina, lavamanos, cortinas. |
+| Nombre |	Cadena | No nulo | Nombre del producto |
+| Precio |	Decimal	| No nulo	| Precio de compra del producto |
+| Descripcion |	Cadena | | Descripcion del producto |
+| Existencia |	Entero | | Cantidad de producto disponible para venta |
+| Reusable |	Booleano | No nulo | Verdadero si el producto es reusable, falso de lo contrario |
