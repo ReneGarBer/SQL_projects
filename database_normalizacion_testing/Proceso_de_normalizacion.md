@@ -93,6 +93,7 @@ Anomalías de eliminación: Se pierden algunos atributos por eliminar otros.
 Dependencia Funcional:
 
 Ahora buscamos casos en los que pudieramos incurrir en esas anomalías.
+
 1º Anomalias de inserción. El atributo Puesto de la tabla Empleado puede darnos problemas, supongamos que contamos con el puesto 'vendedor', no se hace distinción 
 si vende en la tienda física o de manera telefónica, la empresa quiere dividir estas áreas por cuestiones de crecimiento y delegar responbsabilidades a más empleados. Los vendedores actuales de la empresa pasaran a ser vendedor_en_tienda (los que trabajan en las tiendas físicas) y vendedor_telefono, estos últimos están por contratarse. 
 Nos sería imposible agregar el nuevo puesto vendedor_telefono debido a que tiene una dependencia funcional con el atributo id de la tabla Empleado, se necesita un empleado para poder agregarlo a la tabla con el puesto vendedor_telefono.
