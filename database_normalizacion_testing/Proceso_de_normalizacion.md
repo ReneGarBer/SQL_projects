@@ -16,9 +16,9 @@ El diccionario de datos deberá modificarse conforme se altere el diagrama entid
 | ------ | ---- | ----------- | ----------- |
 | Id	| Entero |	Serial, no nulo |	Número único para identificar la fila |
 | Nombre | Cadena | No nulo	| Nombre que aparece en el acta de nacimiento del empleado |
-| Apellido_1 | Cadena	| No nulo	Primer apellido que aparece en el acta de nacimiento del empleado |
-| Apellido_2 | Cadena	 | Segundo apellido que aparece en el acta de nacimiento del empleado |
-| Nombre_usuario | Cadena	| No nulo	Nombre que usara el empleado para identificarse en la aplicación |
+| Apellido_1 | Cadena	| No nulo	| Primer apellido que aparece en el acta de nacimiento del empleado |
+| Apellido_2 | Cadena	 | |Segundo apellido que aparece en el acta de nacimiento del empleado |
+| Nombre_usuario | Cadena	| No nulo	| Nombre que usara el empleado para identificarse en la aplicación |
 | Email	| Cadena | No nulo | Correo electrónico del empleado |
 | Contraseña | Cadena	| No nulo |	Contraseña que usará el empleado para acceder a la aplicación |
 | Puesto |Cadena | No nulo | Cargo que ocupa el empleado dentro de la empresa |
