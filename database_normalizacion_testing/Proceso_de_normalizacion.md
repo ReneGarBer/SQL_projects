@@ -11,8 +11,7 @@ cada uno de los atributos de cada una de las tablas, esto nos ayuda a comprender
 entre las tablas y las dependencias funcionales que pueden existir entre los atributos de las mismas.
 El diccionario de datos deberá modificarse conforme se altere el diagrama entidad relación.
 
-| Empleado (Contiene la información que identifica a los empleados) |
-|-------------------------------------------------------------------|
+** Empleado (Contiene la información que identifica a los empleados) **
 | Nombre | Tipo	| Restricción |	Descripción |
 |--------|------|-------------|-------------|
 | Id	| Entero |	Serial, no nulo |	Número único para identificar la fila |
