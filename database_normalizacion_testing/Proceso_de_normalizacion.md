@@ -4,7 +4,7 @@ de articulos de baño (tinas, retretes, lavamanos, etc.) a partir de una base de
 El archivo base de DB_original.png muestra la el diagrama relacional de la base de datos original
 a partir de este diagrama se realizarán las modificaciones necesarias.
 
-![Base de datos original](SQL_projects/database_normalizacion_testing/DB_original.png)
+![Base de datos original](https://github.com/ReneGarBer/SQL_projects/blob/main/database_normalizacion_testing/SQL_projects/database_normalizacion_testing/DB_original.png)
 
 1º El primer paso es crear un diccionario de datos que nos sirva de guía para entender que representan 
 cada uno de los atributos de cada una de las tablas, esto nos ayuda a comprender mejor las relaciones 
