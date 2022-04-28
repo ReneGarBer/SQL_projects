@@ -1,5 +1,6 @@
 En este documento se explica el proceso de normalización de una base de datos para un punto de venta
-de articulos de baño (tinas, retretes, lavamanos, etc.) a partir de una base de datos existente.
+de articulos de baño (tinas, retretes, lavamanos, etc.). Se quiere, a partir de una base de datos existente, crear una aplicación
+que sirva para el control de inventario y personal de la empresa.
 
 El archivo base de DB_original.png muestra la el diagrama relacional de la base de datos original
 a partir de este diagrama se realizarán las modificaciones necesarias.
@@ -79,3 +80,25 @@ El diccionario de datos deberá modificarse conforme se altere el diagrama entid
 | Descripcion |	Cadena | | Descripcion del producto |
 | Existencia |	Entero | | Cantidad de producto disponible para venta |
 | Reusable |	Booleano | No nulo | Verdadero si el producto es reusable, falso de lo contrario |
+
+**Normalización**
+La normalización puede entenderse como el proceso de análisis basado en dependencias funcionales y claves principales para minimizar la redundancia y anomalías de inserción, borrado y actualización.
+
+Anomalías de inserción: No poder agregar atributos a causa de otros atributos que no deberían tener dependencias funcionales.
+
+Anomalías de modificación: Al modificar datos duplicados no se modifican todas las intancias.
+
+Anomalías de eliminación: Se pierden algunos atributos por eliminar otros.
+
+Dependencia Funcional:
+
+Ahora buscamos casos en los que pudieramos incurrir en esas anomalías.
+1º Anomalias de inserción. El atributo Puesto de la tabla Empleado puede darnos problemas, supongamos que contamos con el puesto 'vendedor', no se hace distinción 
+si vende en la tienda física o de manera telefónica, la empresa quiere dividir estas áreas por cuestiones de crecimiento y delegar responbsabilidades a más empleados. Los vendedores actuales de la empresa pasaran a ser vendedor_en_tienda (los que trabajan en las tiendas físicas) y vendedor_telefono, estos últimos están por contratarse. 
+Nos sería imposible agregar el nuevo puesto vendedor_telefono debido a que tiene una dependencia funcional con el atributo id de la tabla Empleado, se necesita un empleado para poder agregarlo a la tabla con el puesto vendedor_telefono.
+
+2º Anomalías de modificación: Supongamos que queremos modificar el atributo Tipo de la tabla Producto, distintas celdas de esta columna tiene escrito el atributo de distinta forma, el atributo debería ser 'Bañera', en cambio tenemos 'tina', 'tina de baño', 'Tina para baño'. Queremos moficar todos estos tipos con una sola transacción, esto aunque no es imposible de hacer, se vuelve complicado debido a que tendríamos que incluir cada caso en las condiciones de nuestra conculta, ejemplo: ' ... Where Tipo = 'tina' OR Tipo = 'tina de baño' OR Tipo = 'tina para baño';' esto no garantiza que se corrija el error ya que es posible que algún caso se nos haya pasado por alto.
+
+3º Podemos observarlo en el caso de el atributo Puesto de la tabla Empleado, si se elimina de la tabla, ya sea por despido o renuncia, a un empleado quien era el único en ocupar un puesto en particular, perdemos toda la información relacionada a este puesto.
+
+De esta manera determinamos que la base de datos sí necesita ser normalizada.
